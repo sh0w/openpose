@@ -438,7 +438,7 @@ namespace op
         "pose/body_19e/pose_iter_XXXXXX.caffemodel",
         "pose/body_25b/pose_iter_XXXXXX.caffemodel",
         "pose/body_135/pose_iter_XXXXXX.caffemodel",
-        "pose/body_21a/pose_iter_XXXXXX.caffemodel",
+        "pose/body_21a/pose_iter_264000.caffemodel",
     };
 
     // Constant Array Parameters
