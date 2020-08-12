@@ -150,6 +150,15 @@ public:
                 flagsToRenderMode(FLAGS_hand_render, multipleView, FLAGS_render_pose), (float)FLAGS_hand_alpha_pose,
                 (float)FLAGS_hand_alpha_heatmap, (float)FLAGS_hand_render_threshold};
             opWrapper->configure(wrapperStructHand);
+
+
+	// include STAF in Python API:
+        // Tracking (use op::WrapperStructTracking{} to disable it)
+        const op::WrapperStructTracking wrapperStructTracking{
+            FLAGS_tracking}; // Raaj: Add your flags in here
+        opWrapper->configure(wrapperStructTracking);
+
+
             // Extra functionality configuration (use WrapperStructExtra{} to disable it)
             const WrapperStructExtra wrapperStructExtra{
                 FLAGS_3d, FLAGS_3d_min_views, FLAGS_identification, FLAGS_tracking, FLAGS_ik_threads};
