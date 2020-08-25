@@ -67,12 +67,18 @@ try:
 
     # Process and display images
     for imagePath in imagePaths:
+        print("##################### new image received ##################")
         datum = op.Datum()
         imageToProcess = cv2.imread(imagePath)
         datum.cvInputData = imageToProcess
+
+        opWrapper.emplaceAndPop([datum])
+
+        # a bit of a hack ... we have to call this twice if we use STAF (otherwise only every other image will be processed)
         opWrapper.emplaceAndPop([datum])
 
         print("Body keypoints: \n" + str(datum.poseKeypoints))
+        print("Pose IDs: \n" + str(datum.poseIds))
 
         if not args[0].no_display:
             cv2.imshow("OpenPose 1.5.0 - Tutorial Python API", datum.cvOutputData)
